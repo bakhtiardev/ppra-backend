@@ -1,4 +1,4 @@
-import tabula
+from tabula.io import read_pdf
 import spacy
 import numerizer
 from nlplogic import *
@@ -68,7 +68,7 @@ def extract_contract_amount(file):
 
 
 def findContractAmountFromTable(file):
-    table = tabula.read_pdf(file, multiple_tables=True)
+    table = read_pdf(file, multiple_tables=True)
     # Define two example sentences
     sent1 = "NIT cost"
     sent2 = "Estimated Cost"
