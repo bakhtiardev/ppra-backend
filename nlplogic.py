@@ -1,16 +1,19 @@
 import spacy
 from flask import Flask, request
 import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
 import PyPDF2
 import numerizer
 from spacy.matcher import Matcher
 import re
 import tabula
 from numerizer import numerize
+nltk.download('wordnet')
+from nltk.stem import WordNetLemmatizer
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 
 nlp = spacy.load("en_core_web_sm")
+
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 
